@@ -20,6 +20,9 @@ importers:
       next:
         specifier: 15.4.6
         version: 15.4.6(@babel/core@7.28.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      nhost:
+        specifier: ^0.1.11
+        version: 0.1.11
       react:
         specifier: 19.1.0
         version: 19.1.0
@@ -2542,6 +2545,9 @@ packages:
         optional: true
       sass:
         optional: true
+
+  nhost@0.1.11:
+    resolution: {integrity: sha512-gxINYpXtrrk/RsOluiu5+Gwoon0C7AXYqBZQP6AsT2eDAI4ceeick59Sy7cVoEbRuw8ftqibX1fk3tKNtBukjA==}
 
   no-case@3.0.4:
     resolution: {integrity: sha512-fgAN3jGAh+RoxUGZHTSOLJIqUc2wmoBwGR4tbpNAKmmovFoWq0OdRkb0VkldReO2a2iBT/OEulG9XSUc10r3zg==}
@@ -6257,6 +6263,8 @@ snapshots:
     transitivePeerDependencies:
       - '@babel/core'
       - babel-plugin-macros
+
+  nhost@0.1.11: {}
 
   no-case@3.0.4:
     dependencies:
