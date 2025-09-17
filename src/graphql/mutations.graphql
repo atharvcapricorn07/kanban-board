@@ -1,0 +1,67 @@
+# --- Boards ---
+mutation CreateBoard($title: String!) {
+  insert_boards_one(object: { title: $title }) {
+    id
+    title
+  }
+}
+
+mutation UpdateBoard($id: uuid!, $title: String!) {
+  update_boards_by_pk(pk_columns: { id: $id }, _set: { title: $title }) {
+    id
+    title
+  }
+}
+
+mutation DeleteBoard($id: uuid!) {
+  delete_boards_by_pk(id: $id) {
+    id
+  }
+}
+
+# --- Columns ---
+mutation CreateColumn($boardId: uuid!, $title: String!, $position: Int!) {
+  insert_columns_one(object: { board_id: $boardId, title: $title, position: $position }) {
+    id
+    title
+    position
+  }
+}
+
+mutation UpdateColumn($id: uuid!, $title: String!) {
+  update_columns_by_pk(pk_columns: { id: $id }, _set: { title: $title }) {
+    id
+    title
+  }
+}
+
+mutation DeleteColumn($id: uuid!) {
+  delete_columns_by_pk(id: $id) {
+    id
+  }
+}
+
+# --- Cards ---
+mutation CreateCard($columnId: uuid!, $title: String!, $position: Int!) {
+  insert_cards_one(
+    object: { column_id: $columnId, title: $title, position: $position }
+  ) {
+    id
+    title
+    position
+  }
+}
+
+mutation UpdateCard($id: uuid!, $columnId: uuid!, $position: Int!) {
+  update_cards_by_pk(pk_columns: { id: $id }, _set: { column_id: $columnId, position: $position }) {
+    id
+    column_id
+    position
+  }
+}
+
+mutation DeleteCard($id: uuid!) {
+  delete_cards_by_pk(id: $id) {
+    id
+  }
+}

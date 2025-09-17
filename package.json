@@ -6,16 +6,22 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "codegen": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
     "@apollo/client": "^3.13.9",
     "@apollo/client-integration-nextjs": "^0.12.3",
+    "@nhost/nextjs": "^2.3.0",
+    "@nhost/nhost-js": "^3.3.0",
     "graphql": "^16.11.0",
+    "lucide-react": "^0.541.0",
     "next": "15.4.6",
     "nhost": "^0.1.11",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-beautiful-dnd": "^13.1.1",
+    "react-dom": "19.1.0",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -27,8 +33,10 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv": "^17.2.2",
     "eslint": "^9",
     "eslint-config-next": "15.4.6",
+    "prettier": "^3.6.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   },
@@ -36,13 +44,13 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YOUR_USERNAME/kanban-board.git"
+    "url": "git+https://github.com/atharvcapricorn07/kanban-board.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/YOUR_USERNAME/kanban-board/issues"
+    "url": "https://github.com/atharvcapricorn07/kanban-board/issues"
   },
-  "homepage": "https://github.com/YOUR_USERNAME/kanban-board#readme"
+  "homepage": "https://github.com/atharvcapricorn07/kanban-board#readme"
 }

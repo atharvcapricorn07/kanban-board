@@ -1,0 +1,14 @@
+subscription OnCardsByBoard($boardId: uuid!) {
+  columns(where: { board_id: { _eq: $boardId } }, order_by: { position: asc }) {
+    id
+    title
+    position
+    board_id
+    cards(order_by: { position: asc }) {
+      id
+      title
+      position
+      column_id
+    }
+  }
+}

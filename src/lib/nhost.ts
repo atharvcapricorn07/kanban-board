@@ -1,7 +1,12 @@
-import { createClient } from '@nhost/nhost-js';
+// src/lib/nhost.ts
+import { NhostClient } from '@nhost/nhost-js';
 
-const nhost = createClient({
-  backendUrl: process.env.NHOST_BACKEND_URL || 'https://<your-project>.nhost.app',
+console.log("[DEBUG] Nhost subdomain:", process.env.NEXT_PUBLIC_NHOST_SUBDOMAIN);
+console.log("[DEBUG] Nhost region:", process.env.NEXT_PUBLIC_NHOST_REGION);
+
+const nhost = new NhostClient({
+  subdomain: process.env.NEXT_PUBLIC_NHOST_SUBDOMAIN!,
+  region: process.env.NEXT_PUBLIC_NHOST_REGION!,
 });
 
-export default nhost;
+export default nhost; // ✅ default export

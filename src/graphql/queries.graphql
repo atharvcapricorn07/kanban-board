@@ -2,5 +2,36 @@ query GetBoards {
   boards {
     id
     title
+    created_at
+    updated_at
+  }
+}
+
+query GetBoard($id: uuid!) {
+  boards_by_pk(id: $id) {
+    id
+    title
+    created_at
+    updated_at
+    columns {
+      id
+      title
+      position
+      cards {
+        id
+        title
+        position
+      }
+    }
+  }
+}
+
+
+query GetBoardById($id: uuid!) {
+  boards_by_pk(id: $id) {
+    id
+    title
+    created_at
+    updated_at
   }
 }

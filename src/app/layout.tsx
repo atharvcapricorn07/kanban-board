@@ -1,6 +1,8 @@
+// src/app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import NhostWrapper from "@/lib/NhostWrapper";
 import ApolloWrapper from "@/lib/ApolloWrapper";
 
 const geistSans = Geist({
@@ -20,15 +22,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <ApolloWrapper>
-          {children}
-        </ApolloWrapper>
+        {/* Wrap the app with Nhost + Apollo providers */}
+        <NhostWrapper>
+          <ApolloWrapper>{children}</ApolloWrapper>
+        </NhostWrapper>
       </body>
     </html>
   );
